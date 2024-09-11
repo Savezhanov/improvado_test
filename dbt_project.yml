@@ -37,6 +37,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   improvado_project:
-    # Applies to all files under models/example/
-    example:
+    paid_ads_basic_performance:
       +materialized: table
+seeds:
+  improvado_project:
+    mcdm_paid_ads_basic_performance_structure:
+      quote_columns: false
