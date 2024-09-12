@@ -1,30 +1,30 @@
 WITH stg_ads_bing_all_data AS (
     SELECT 
-        ad_id,
-        0 as add_to_cart,
-        adset_id,
-        campaign_id,
-        channel,
-        clicks,
-        '' as comments,
-        '' as creative_id,
-        date,
-        0 as engagements,
-        0 as impressions,
-        0 as installs,
-        0 as likes,
-        0 as link_clicks,
-        '' as placement_id,
-        0 as post_click_conversions,
-        0 as post_view_conversions,
-        0 as posts,
-        0 as purchase,
-        0 as registrations,
-        revenue,
-        0 as shares,
-        spend,
-        conv as total_conversions,
-        0 as video_views
+        CAST(ad_id AS string) AS ad_id, -- string
+        CAST(0 AS int64) AS add_to_cart, -- int64
+        CAST(adset_id AS string) AS adset_id, -- string
+        CAST(campaign_id AS string) AS campaign_id, -- string
+        CAST(channel AS string) AS channel, -- string
+        CAST(clicks AS int64) AS clicks, -- int64
+        CAST(0 AS int64) AS comments, -- int64
+        CAST('' AS string) AS creative_id, -- string
+        CAST(date AS date) AS date, -- date
+        CAST(0 AS int64) AS engagements, -- int64
+        CAST(0 AS int64) AS impressions, -- int64
+        CAST(0 AS int64) AS installs, -- int64
+        CAST(0 AS int64) AS likes, -- int64
+        CAST(0 AS int64) AS link_clicks, -- int64
+        CAST('' AS string) AS placement_id, -- string
+        CAST(0 AS int64) AS post_click_conversions, -- int64
+        CAST(0 AS int64) AS post_view_conversions, -- int64
+        CAST(0 AS int64) AS posts, -- int64
+        CAST(0 AS int64) AS purchase, -- int64
+        CAST(0 AS int64) AS registrations, -- int64
+        CAST(revenue AS int64) AS revenue, -- int64
+        CAST(0 AS int64) AS shares, -- int64
+        CAST(spend AS int64) AS spend, -- int64
+        CAST(conv AS int64) AS total_conversions, -- int64
+        CAST(0 AS int64) AS video_views -- int64
     FROM {{ ref('src_ads_bing_all_data') }}
 )
 
