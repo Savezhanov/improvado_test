@@ -9,7 +9,7 @@ WITH stg_ads_creative_facebook_all_data AS (
         CAST(comments AS int64) AS comments, -- int64
         CAST(creative_id AS string) AS creative_id, -- string
         CAST(date AS date) AS date, -- date
-        CAST(0 AS int64) AS engagements, -- int64
+        CAST((clicks + views + shares + comments + likes) AS int64) AS engagements, -- int64
         CAST(impressions AS int64) AS impressions, -- int64
         CAST(0 AS int64) AS installs, -- int64
         CAST(likes AS int64) AS likes, -- int64
