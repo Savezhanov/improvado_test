@@ -23,7 +23,7 @@ WITH stg_ads_tiktok_ads_all_data AS (
         CAST(0 AS int64) AS revenue, -- int64
         CAST(0 AS int64) AS shares, -- int64
         CAST(spend AS int64) AS spend, -- int64
-        CAST(0 AS int64) AS total_conversions, -- int64
+        CAST(conversions AS int64) AS total_conversions, -- int64
         CAST(video_views AS int64) AS video_views -- int64
     FROM {{ ref('src_ads_tiktok_ads_all_data') }}
 )

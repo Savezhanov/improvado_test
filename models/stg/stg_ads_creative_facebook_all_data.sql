@@ -19,11 +19,11 @@ WITH stg_ads_creative_facebook_all_data AS (
         CAST(0 AS int64) AS post_view_conversions, -- int64
         CAST(0 AS int64) AS posts, -- int64
         CAST(0 AS int64) AS purchase, -- int64
-        CAST(0 AS int64) AS registrations, -- int64
+        CAST(complete_registration AS int64) AS registrations, -- int64
         CAST(0 AS int64) AS revenue, -- int64
         CAST(shares AS int64) AS shares, -- int64
         CAST(spend AS int64) AS spend, -- int64
-        CAST(0 AS int64) AS total_conversions, -- int64
+        CAST(purchase AS int64) AS total_conversions, -- int64; take purchase as conversion mark
         CAST(views AS int64) AS video_views -- int64
     FROM {{ ref('src_ads_creative_facebook_all_data') }}
 )
