@@ -19,7 +19,7 @@ promoted_tweets_twitter_all_data AS (
 ),
 
 paid_ads_basic_performance AS (
-    SELECT *
+    SELECT *        
     FROM ads_bing_all_data
     UNION ALL
     SELECT *
